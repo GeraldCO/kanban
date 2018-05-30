@@ -4,11 +4,13 @@ const  KanbanCard =(props)=>{
   const divstyles ={
     display:'in-line'
   }
+
   const buttonStyle={
     display: props.btnNext ? 'in-line' : 'none' 
   }
+
   const {
-    bg, title, id, prioridad, status
+    bg, title 
   } = props
   return (    
     <div className={"card text-white mb-3 "+bg} style={divstyles} ref={props.setInputRef} >

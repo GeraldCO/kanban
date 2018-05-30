@@ -1,9 +1,8 @@
 import React, {Component} from 'react'
 import KanbanBoard from '../components/kanban-board'
-import Column from '../components/kanban-column'
+import Column from '../containers/kanbanColumn'
 import data from '../../task.json'
 import Modal from '../../modal/components/modal'
-import ModalContainer from '../../modal/containers/modal'
 
 class Kanban extends Component{
   constructor(props){
@@ -84,7 +83,7 @@ class Kanban extends Component{
     let tasks= this.state.tasks;
     let tarea=this.state.tasks[1];
     tarea.status="TYPE_TODO"
-    tarea.title="crear un pequeño proyecto con reactJS ¡POR FIN FUNCIONA ESTA MIERDA!";
+    tarea.title="crear un pequeño proyecto con reactJS";
     tasks[1]=tarea;
     console.log(tasks)
     this.setState(prevState => ({

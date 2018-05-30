@@ -13,7 +13,6 @@ class KanbanCard extends Component{
   }
 
   componentDidMount () { 
-    var idTask = this.refs.myTaskCard;
   }
 
   componentDidUpdate(){
@@ -41,7 +40,7 @@ class KanbanCard extends Component{
           id={this.state.task.id}
           handleClickCard={this.props.handleClickCard}
           handleStatusChange={this.handleStatusChange}
-          btnNext={this.btnNext}
+          btnNext={this.props.btnNext}
         />
        );
   }
