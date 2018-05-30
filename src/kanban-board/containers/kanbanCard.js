@@ -14,29 +14,36 @@ class KanbanCard extends Component{
 
   componentDidMount () { 
     var idTask = this.refs.myTaskCard;
-    alert(idTask)
   }
 
   componentDidUpdate(){
-    console.log('Child  has been updated')
   }
   componentWillUnmount() {
-    console.log('Child  has been unmounted')
   }
 
+  handleClick=()=>{
+    this.props.click(this.props.index)
+  }
 
+  handleStatusChange=()=>{
+    console.log(this.props.itemTask)
+    this.props.handleStatusChange(this.props.itemTask)
+  }
 
   render(){    
-       return( <Card
-       
-        bg={this.state.task.bg}
-        title={this.state.task.title}
-        prioridad={this.state.task.prioridad}
-        display={this.state.task.display}
-        handleClick={this.handleClick}
-        id={this.state.task.id}
-        handleClickCard={this.props.handleClickCard}
-      /> );
+       return(
+        <Card        
+          bg={this.state.task.bg}
+          title={this.state.task.title}
+          prioridad={this.state.task.prioridad}
+          display={this.state.task.display}
+          handleClick={this.handleClick}
+          id={this.state.task.id}
+          handleClickCard={this.props.handleClickCard}
+          handleStatusChange={this.handleStatusChange}
+          btnNext={this.btnNext}
+        />
+       );
   }
   
 }

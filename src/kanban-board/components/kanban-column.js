@@ -1,5 +1,5 @@
 import React, {Component} from 'react'
-import Card from './kanbanCard'
+import Card from '../containers/kanbanCard'
 import Modal from '../../modal/components/modal'
 import ModalContainer from '../../modal/containers/modal'
 import {createPortal } from 'react-dom';
@@ -46,12 +46,10 @@ class kanban_layout extends Component{
   }
 
   componentDidUpdate(){
-    console.log("gerald")
   }
 
   
   componentDidMount(){
-    console.log("componente montado")
   }
 
   render(){

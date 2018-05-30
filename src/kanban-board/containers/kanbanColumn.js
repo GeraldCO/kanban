@@ -25,9 +25,9 @@ export default class KanbanColumnt extends Component{
       status: "TYPE_DONE"
     };
     tareas.push(newTask);
-    this.setState({
+    this.setState(prevState => ({
       tasksList: tareas
-    })
+    }));
     
   }
 

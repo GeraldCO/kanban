@@ -29,12 +29,12 @@ class Kanban extends Component{
       status: "TYPE_INPROGRESS"
     };
     tareas.push(newTask);
-    this.setState({
+    this.setState(prevState => ({
       tasks: [],
-      TypeDone:this.state.TypeDone,
-      TypeInProgress:this.state.TypeInProgress,
+      TypeDone:prevState.TypeDone,
+      TypeInProgress:prevState.TypeInProgress,
       TYpeTodo:tareas,
-    })
+    }));
   }
 
 
@@ -49,9 +49,9 @@ class Kanban extends Component{
       tasksToSplice.splice(index,1)
       tasksToAdd = this.state.TypeInProgress;
       tasksToAdd.push(item)
-      this.setState( state =>({
+      this.setState( prevState => ({
         tasks:[],
-        TypeDone:this.state.TypeDone,
+        TypeDone:prevState.TypeDone,
         TypeInProgress:tasksToAdd,
         TYpeTodo:tasksToSplice,
         })
@@ -64,11 +64,11 @@ class Kanban extends Component{
       tasksToSplice.splice(index,1);
       tasksToAdd = this.state.TypeDone;
       tasksToAdd.push(item)
-      this.setState( state => ({
+      this.setState(prevState => ({
         tasks:[],
         TypeDone:tasksToAdd,
-        TypeInProgress:this.state.TypeInProgress,
-        TYpeTodo:this.state.TYpeTodo,
+        TypeInProgress:prevState.TypeInProgress,
+        TYpeTodo:prevState.TYpeTodo,
         })
       )
     }
@@ -87,7 +87,7 @@ class Kanban extends Component{
     tarea.title="crear un pequeño proyecto con reactJS ¡POR FIN FUNCIONA ESTA MIERDA!";
     tasks[1]=tarea;
     console.log(tasks)
-    this.setState( state => ({
+    this.setState(prevState => ({
       tasks:tasks,
       TypeDone:[],
       TypeInProgress:[],
