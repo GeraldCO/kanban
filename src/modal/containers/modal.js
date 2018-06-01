@@ -5,7 +5,6 @@ class ModalContainer extends Component {
   render() {
     return createPortal( this.props.children, document.getElementById('modalContainer')
     )
-  }
+  } 
 }
-
 export default ModalContainer;

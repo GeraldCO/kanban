@@ -120,10 +120,10 @@ class Kanban extends Component{
         <Column title="TYPE_INPROGRESS" tareas={this.state.TypeInProgress} key={2} handleStatusChange={this.handleStatusChange} id="INPROGRESS" bg="bg-warning" btnNext={true} />
         <Column title="TYPE_DONE" tareas={this.state.TypeDone} key={3} id="DONE" bg="bg-success" btnNext={false}/>
       </KanbanBoard>
-      <div><a className="btn btn-primary" data-toggle="modal" href="#myModal">Launch Modal</a></div>
+      <div><a className="btn btn-primary" data-toggle="modal" href="#myModal">Nueva tarea</a></div>
        <Modal addTask={this.addTask}/> 
       </div>
-    )
+    ) 
   }
 }
 export default Kanban;

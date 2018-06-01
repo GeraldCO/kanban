@@ -1,11 +1,12 @@
 import React, {PureComponent} from 'react';
-
+var $ = require ('jquery');
 
 class Modal extends PureComponent {
-
   handleForm=(e)=>{
     e.preventDefault();
-    this.props.addTask("gerald")
+    this.props.addTask($("#newTask").val());
+    $('#myModal').modal('hide');
+    return false;
   }
 
   render(){
@@ -38,8 +39,7 @@ class Modal extends PureComponent {
         </div>
       </div>
     )
-  }
-  
+  }  
 }
 
 export default Modal;
