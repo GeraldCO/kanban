@@ -6,10 +6,11 @@ const kanban_layout = (props)=>{
   const tam={
     maxWidth:"18rem",
     padding:0
-    }
-    const pillBadgeStyle={
-      paddingTop:"6px"
-    }
+  }
+  
+  const pillBadgeStyle={
+    paddingTop:"6px"
+  }
     
   return(  
       <div className="card border-primary col-md-3 mb-3" id={props.id} style={tam}>

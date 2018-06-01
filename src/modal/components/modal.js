@@ -6,7 +6,7 @@ class Modal extends PureComponent {
     e.preventDefault();
     this.props.addTask($("#newTask").val());
     $('#myModal').modal('hide');
-    return false;
+    $("#newTask").val("")
   }
 
   render(){

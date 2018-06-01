@@ -7,7 +7,7 @@ import Modal from '../../modal/components/modal'
 class Kanban extends Component{
   constructor(props){
     super(props);
-    this.next = this.next.bind(this);
+    //this.next = this.next.bind(this);
     this.handleStatusChange = this.handleStatusChange.bind(this);
     this.state = {
       tasks:data.tasks,
@@ -20,8 +20,9 @@ class Kanban extends Component{
   addTask=()=>{
     let title=document.getElementById("newTask").value;
     let tareas = this.state.TYpeTodo;
+    let id=Math.floor((Math.random() * 100) + 1);
     let newTask={
-      id: 64514,
+      id: id,
       priority: "PRIORITY_HIGHEST",
       title: title,
       epicLink: "React buidings",
@@ -35,7 +36,6 @@ class Kanban extends Component{
       TYpeTodo:tareas,
     }));
   }
-
 
   handleStatusChange(item){
     let tasksToSplice;
@@ -72,14 +72,11 @@ class Kanban extends Component{
       )
     }
     else index=2;
-
   }
 
-  componentDidUpdate(){
-    
+  componentDidUpdate(){    
   }
-
-  next(index, type){
+  /** next(index, type){
     let tasks= this.state.tasks;
     let tarea=this.state.tasks[1];
     tarea.status="TYPE_TODO"
@@ -95,7 +92,10 @@ class Kanban extends Component{
       })
     )
     console.log(tasks)
-  }
+    console.log(
+      "gerald"
+    )
+  }    */   //no recuerdo para que era
 
   handleChildUnmount=()=>{
     this.setState({renderChild: false});

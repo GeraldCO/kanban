@@ -25,7 +25,6 @@ class KanbanCard extends Component{
   }
 
   handleStatusChange=()=>{
-    console.log(this.props.itemTask)
     this.props.handleStatusChange(this.props.itemTask)
   }
 

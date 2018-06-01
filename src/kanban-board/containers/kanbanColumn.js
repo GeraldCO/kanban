@@ -5,7 +5,6 @@ export default class KanbanColumnt extends Component{
 
   constructor(props){
     super(props);
-    this.cambiandoTODO=this.cambiandoTODO.bind(this);
     this.state={
       tareas:props.tareas,
       click:false, 
@@ -20,9 +19,7 @@ export default class KanbanColumnt extends Component{
     })
    }
 
-  cambiandoTODO(){
-    this.props.cambiandoTODO(this.state.tareas)
-  }
+  
 
   addTask=(title)=>{
     //let ultimaTarea= this.state.tareas[this.state.tareas.length-1];
@@ -51,7 +48,6 @@ export default class KanbanColumnt extends Component{
         handleClickCard={this.handleClickCard}
         modificar={this.props.modificar}
         btnNext={this.props.btnNext}
-
       /> 
     )
 
